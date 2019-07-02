@@ -22,7 +22,6 @@ class CostsController extends Controller
         }
         $costs = Costs::filters($reqest)->paginate($count);
         $type = TypeCosts::all();
-        dd($costs);
         return response()->json([$type, $costs], 200);
     }
 
