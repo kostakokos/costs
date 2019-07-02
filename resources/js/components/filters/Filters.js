@@ -95,7 +95,11 @@ export default class Filters extends Component {
     }
 
     handleChange(date) {
-        const dates = this.formatDate(new Date(date));
+        let dates = "";
+        if (date != null) {
+            dates = this.formatDate(new Date(date));
+        }
+        console.log(dates);
         this.setState({
             date: date,
             dateSet: dates

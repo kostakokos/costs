@@ -41492,7 +41492,13 @@ function (_Component) {
   }, {
     key: "handleChange",
     value: function handleChange(date) {
-      var dates = this.formatDate(new Date(date));
+      var dates = "";
+
+      if (date != null) {
+        dates = this.formatDate(new Date(date));
+      }
+
+      console.log(dates);
       this.setState({
         date: date,
         dateSet: dates
@@ -41761,7 +41767,11 @@ function (_Component) {
         href: "#",
         onClick: this.sortList,
         "data-a": "id"
-      }, "ID"), "\xA0", this.sortIcon('id')), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+      }, "ID"), "\xA0", this.sortIcon('id')), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+        style: {
+          width: "160px"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         href: "#",
         onClick: this.sortList,
         "data-a": "type"

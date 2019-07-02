@@ -29,7 +29,7 @@ export default class Table extends Component {
                                     <a href="#" onClick={this.sortList} data-a='id' >ID</a>&nbsp;
                                     {this.sortIcon('id')}
                                 </th>
-                                <th >
+                                <th style={{width: "160px"}} >
                                     <a href="#" onClick={this.sortList} data-a='type'>Type</a>&nbsp;
                                     {this.sortIcon('type')}
                                 </th>

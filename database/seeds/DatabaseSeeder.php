@@ -14,16 +14,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $type_costs = TypeCosts::create([
-            'name' => 'Pokupki'
-        ]);
-        
-        for ($i=0; $i < 100; $i++) { 
-            Costs::create([
-                'type_costs_id' => $type_costs->id,
-                'amount' => ($i * 10),
-            ]);
-        }
+        $faker = Faker\Factory::create();
 
+        for ($a=0; $a < 10; $a++) { 
+            $type_costs = TypeCosts::create([
+                'name' => $faker->company
+            ]);
+
+            for ($i=0; $i < 20; $i++) { 
+                Costs::create([
+                    'type_costs_id' => $type_costs->id,
+                    'amount' => ($i * 10),
+                    'description' => $faker->paragraph,
+                    'created_at'  => $faker->dateTimeBetween('-7 days'),
+                ]);
+            }
+        }
     }
 }
