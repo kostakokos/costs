@@ -22,7 +22,7 @@ class CostsController extends Controller
         }
         $costs = Costs::filters($reqest)->paginate($count);
         $type = TypeCosts::all();
-        
+        dd($costs);
         return response()->json([$type, $costs], 200);
     }
 
@@ -50,7 +50,6 @@ class CostsController extends Controller
         $types = TypeCosts::all();
         return view('costs.create', compact('types'));
     }
-
 
     public function createType(Request $request)
     {
